@@ -13,19 +13,19 @@ namespace Summer2024_Example
 
             var inventoryManager = new InventoryManager();
             var shopCart = new ShopCart();
-            var inventorytSvc = InventoryServiceProxy.Current;
+            var inventorytSvc = ProductServiceProxy.Current;
 
             inventorytSvc.AddOrUpdate(
-            new InventoryItem
+            new Products
             {
-                Name = "Enano Pingon",
+                Name = "Enano",
                 Description = "Increases Performance",
                 Price = 10.54,
                 Quantity = 10,
             });
 
             inventorytSvc.AddOrUpdate(
-            new InventoryItem
+            new Products
             {
                 Name = "Mata todo",
                 Description = "Increases Performance",

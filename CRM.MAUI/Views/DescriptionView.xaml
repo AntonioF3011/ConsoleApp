@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRM.MAUI.Views.DescriptionView"
+             Title="DescriptionView"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Text="ID"   Margin="10,10,10,20" BackgroundColor="DarkSalmon"/>
+            <Label Grid.Column="0" Grid.Row="1" Text="Name"   Margin="10,0,0,0"/>
+            <Label Grid.Column="0" Grid.Row="2" Text="Price"   Margin="10,0,0,0"/>
+            <Label Grid.Column="0" Grid.Row="3" Text="In Stock"   Margin="10,0,0,0"/>
+            <Label Grid.ColumnSpan="2" Grid.Row="4" Text="Description"   Margin="10,0,0,20" HorizontalOptions="CenterAndExpand" TextDecorations="Underline"/>
+
+            <Label Grid.Column="1" Grid.Row="0" Text="{Binding Id} " 
+               
+                 Margin="10,10,10,10"
+                HorizontalOptions="Start" 
+               
+                />
+            <Label Grid.Column="1" Grid.Row="1" Text="{Binding Name}"  Margin="10,0,0,10"  />
+            <Label Grid.Column="1" Grid.Row="2" Text="{Binding DisplayPrice}"  Margin="10,0,0,10" />
+            <Label Grid.Column="1" Grid.Row="3" Text="{Binding Quantity}"  Margin="10,0,0,10" />
+            <Label Grid.ColumnSpan="2" Grid.Row="5" Text="{Binding Description}" Margin="10,0,0,10" HorizontalOptions="CenterAndExpand" FontAttributes="Italic" />
+        </Grid>
+        <Button
+            Text="Back"
+            Clicked="BackHomeClicked"
+            BackgroundColor="DarkSalmon"/>
+
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

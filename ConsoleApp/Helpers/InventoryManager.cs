@@ -5,11 +5,11 @@ namespace ConsoleApp.Helpers
 {
     public class InventoryManager
     {
-        private readonly InventoryServiceProxy inventorySvc;
+        private readonly ProductServiceProxy inventorySvc;
 
         public InventoryManager()
         {
-            inventorySvc = InventoryServiceProxy.Current;
+            inventorySvc = ProductServiceProxy.Current;
         }
 
         public void ManageInventory()
@@ -54,7 +54,7 @@ namespace ConsoleApp.Helpers
 
         private void CreateItem()
         {
-            var item = new InventoryItem();
+            var item = new Products();
 
             Console.Write("Enter item name: ");
             item.Name = Console.ReadLine();
@@ -71,7 +71,7 @@ namespace ConsoleApp.Helpers
 
         public void ReadItems()
         {
-            var items = inventorySvc.Items;
+            var items = inventorySvc.Products;
             if (items == null || !items.Any())
             {
                 Console.WriteLine("No items in inventory.");
@@ -94,7 +94,7 @@ namespace ConsoleApp.Helpers
             Console.WriteLine();
             Console.Write("Enter item ID to update: ");
             var id = int.Parse(Console.ReadLine() ?? "0");
-            var item = inventorySvc.Items?.FirstOrDefault(i => i.Id == id);
+            var item = inventorySvc.Products?.FirstOrDefault(i => i.Id == id);
             if (item == null)
             {
                 Console.WriteLine("Item not found.");
